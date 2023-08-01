@@ -18,9 +18,9 @@
         bootproto: static
         onboot: yes
         ip: "{{ kvm_vm_public_ip }}"
-        prefix: 
-        gateway: 
-        dns_server: 
+        prefix: "24"
+        gateway: "192.168.89.1"
+        dns_server: "8.8.8.8"
         config: "--type network --source network --model virtio"
 
   tasks:
