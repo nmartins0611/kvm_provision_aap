@@ -1,8 +1,8 @@
 - hosts: kvm
   tags: provision
   become: true
-  become_user: root
-  become_method: sudo
+  # become_user: root
+  # become_method: sudo
 
   vars:
    kvm_vm_hostname: 
