@@ -1,0 +1,20 @@
+- hosts: localhost
+  tags: provision
+  become: true
+  # become_user: root
+  # become_method: sudo
+  collections:
+   - aws.aws
+
+  tasks:
+
+    - name: Add host
+      awx.awx.host:
+       name:  "{{ kvm_vm_hostname }}"
+       inventory: "Lab_Inventory"
+       state: present
+       controller_config_file: "tower_cli.cfg"
+     # variables:
+     # example_var: 123
+
+
