@@ -14,7 +14,7 @@
    kvm_vm_os_disk_name: "{{ kvm_vm_hostname }}"
    kvm_vm_os_disk_size: "25G"
    kvm_vm_nics:  #NOTE: see example playbook for structure
-      - name: eth0
+      - name: enp1s0
         bootproto: static
         onboot: yes
         ip: "{{ kvm_vm_public_ip }}"
@@ -27,6 +27,13 @@
     - name: Create KVM VM
       include_role:
         name: ansible-kvm-vm
+
+    - name: Update System
+      ansible.builtin.yum:
+        name: *
+        state: present
+
+    - name: 
 
 
 # - hosts: kvm
